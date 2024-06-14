@@ -1,0 +1,89 @@
+/* styles.css (or the global CSS file) */
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   // background: url('/weather-application/src/assets/pexels-pixabay-209831.jpg') no-repeat center center fixed;
+    background-size: cover; /* Cover entire screen */
+  }
+  
+  .fullscreen-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgba(201, 241, 91, 0.5); /* Optional: Dark overlay for better readability */
+    background-image:url("/assets/images/pexels-pixabay-209831.jpg")
+  }
+  
+  .weather-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #2fd3f0; /* Light gray background */
+    position: relative; /* Overlay content on background */
+  }
+  
+  .mat-card-header {
+    text-align: center;
+  }
+  
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .city-input {
+    width: 60%; /* Adjust width of input field */
+  }
+  
+  button {
+    margin-left: 10px;
+    min-width: 120px; /* Ensure button has minimum width */
+  }
+  
+  .weather-info {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .no-data-msg {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #888; /* Gray color for no data message */
+  }
+  
+  @media (max-width: 600px) {
+    .weather-card {
+      padding: 10px;
+    }
+  
+    .city-input {
+      width: 100%; /* Full width on smaller screens */
+    }
+  
+    .weather-info,
+    .no-data-msg {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+  }
+  

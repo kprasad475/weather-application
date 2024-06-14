@@ -1,0 +1,26 @@
+<!-- app.component.html -->
+<div class="fullscreen-container">
+    <mat-card class="weather-card">
+      <mat-card-header>
+        <mat-card-title>Weather in {{ weatherData ? weatherData.city_name : 'Unknown' }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="city-input">
+            <mat-label>Enter City</mat-label>
+            <input matInput [(ngModel)]="city" (ngModelChange)="onCityChange($event)" />
+          </mat-form-field>
+          <button mat-raised-button (click)="getWeather()">Get Weather</button>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="weatherData">
+          <p class="weather-info">Temperature: {{ weatherData.temp }}°C</p>
+          <p class="weather-info">Conditions: {{ weatherData.weather ? weatherData.weather.description : 'N/A' }}</p>
+        </div>
+        <div *ngIf="!weatherData">
+          <p class="no-data-msg">No weather data available for the specified city.</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
